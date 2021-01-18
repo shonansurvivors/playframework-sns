@@ -13,3 +13,8 @@ project/boot
 project/target
 project/plugins/target
 .target
+
+# Others
+.cache
+.ivy2
+.sbt
