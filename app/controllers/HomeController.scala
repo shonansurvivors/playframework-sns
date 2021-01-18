@@ -1,7 +1,10 @@
 package controllers
 
+import akka.util.ByteString
+
 import javax.inject._
 import play.api._
+import play.api.http.HttpEntity
 import play.api.mvc._
 
 /**
@@ -22,5 +25,13 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
     Ok(views.html.index())
   }
 
-  def create() = TODO
+  def create() = Action {
+    Result(
+      header = ResponseHeader(200, Map.empty),
+      body = HttpEntity.Strict(
+        ByteString("This is sample text."),
+        Some("text/plain")
+      )
+    )
+  }
 }
