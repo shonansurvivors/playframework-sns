@@ -21,8 +21,13 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
+//  def index() = Action { implicit request: Request[AnyContent] =>
+//    Ok(views.html.index())
+//  }
+
   def index() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index())
+    Ok("{title: 'Hello!', message: 'This is sample message.'}")
+      .as("application/json")
   }
 
   def create() = Action {
