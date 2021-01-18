@@ -4,7 +4,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /:id                        controllers.HomeController.index(id:Int)
+GET     /                           controllers.HomeController.index(id:Option[Int])
 
 GET     /create                     controllers.HomeController.create
 
