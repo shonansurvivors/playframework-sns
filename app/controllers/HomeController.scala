@@ -25,8 +25,8 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
 //    Ok(views.html.index())
 //  }
 
-  def index() = Action { implicit request: Request[AnyContent] =>
-    Ok("{title: 'Hello!', message: 'This is sample message.'}")
+  def index(id:Int) = Action { implicit request: Request[AnyContent] =>
+    Ok("{title: 'Hello!', message: 'This is sample message.', id:" + id + "}")
       .as("application/json")
   }
 
